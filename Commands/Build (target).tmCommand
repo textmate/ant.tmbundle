@@ -86,7 +86,7 @@ html_footer
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>
-	<string>@B</string>
+	<string>~@b</string>
 	<key>name</key>
 	<string>Build Target</string>
 	<key>output</key>
