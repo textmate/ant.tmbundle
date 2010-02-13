@@ -19,7 +19,10 @@ require 'rexml/document'
 
 STDOUT.sync = true
 
-TextMate.require_cmd "ant"
+tm_ant = 'ant' 
+tm_ant = (ENV['TM_ANT'] == nil) ? 'ant' : ENV['TM_ANT']
+
+TextMate.require_cmd "#{tm_ant}"
 TextMate.min_support 10895
 
 puts html_head( :window_title =&gt; "Ant Build (target)", :page_title =&gt; "Build (target)" );
