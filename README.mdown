@@ -4,6 +4,14 @@ TextMate Ant Bundle
 Installation
 ------------
 
+Via download:
+
+ * Open this [link](http://github.com/textmate/ant.tmbundle/zipball/master)  
+ * Unzip the download  
+ * Rename the folder to Ant.tmbundle  
+ * Double-click  
+ * TextMate handles the rest!  
+
 To install via Git:
 
 		cd ~/"Library/Application Support/TextMate/Bundles/"
@@ -15,7 +23,8 @@ Source can be viewed or forked via GitHub: [http://github.com/textmate/ant.tmbun
 Conventions
 -----------
 
-For Bundle Conventions please follow the TextMate conventions outlined [here](http://svn.textmate.org/trunk/Conventions.txt).
+The bundle follows the [Ant style guide](http://wiki.apache.org/ant/TheElementsOfAntStyle) from the [Ant Wiki](http://wiki.apache.org/ant/FrontPage).  
+Bundle authorship uses the TextMate conventions outlined [here](http://svn.textmate.org/trunk/Conventions.txt).
 
 Support
 -------
@@ -32,7 +41,7 @@ License
 
 If not otherwise specified (see below), files in this project fall under the following license:
 
-		Copyright 2009 Simon Gregory
+		Copyright 2009-2010 Simon Gregory
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
