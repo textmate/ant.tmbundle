@@ -9,10 +9,6 @@
 	</array>
 	<key>firstLineMatch</key>
 	<string>&lt;\!--\s*ant\s*--&gt;</string>
-	<key>foldingStartMarker</key>
-	<string>^\s*(&lt;[^!?%/](?!.+?(/&gt;|&lt;/.+?&gt;))|&lt;[!%]--(?!.+?--%?&gt;)|&lt;%[!]?(?!.+?%&gt;))</string>
-	<key>foldingStopMarker</key>
-	<string>^\s*(&lt;/[^&gt;]+&gt;|[/%]&gt;|--&gt;)\s*$</string>
 	<key>keyEquivalent</key>
 	<string>^~A</string>
 	<key>name</key>
@@ -178,52 +174,66 @@
 		<key>javaAttributes</key>
 		<dict>
 			<key>begin</key>
-			<string>\@{</string>
+			<string>@\{</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.java-attrib.begin.ant</string>
+					<string>punctuation.section.embedded.begin.ant</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>source.java</string>
 			<key>end</key>
-			<string>}</string>
+			<string>(\})</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.java-attrib.end.ant</string>
+					<string>punctuation.section.embedded.end.ant</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>source.java</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>source.java-attrib.embedded.ant</string>
+			<string>meta.embedded.line.java</string>
 		</dict>
 		<key>javaProperties</key>
 		<dict>
 			<key>begin</key>
-			<string>\${</string>
+			<string>\$\{</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.java-prop.begin.ant</string>
+					<string>punctuation.section.embedded.begin.ant</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>source.java-props</string>
 			<key>end</key>
-			<string>}</string>
+			<string>(\})</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.java-prop.end.ant</string>
+					<string>punctuation.section.embedded.end.ant</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>source.java-props</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>source.java-props.embedded.ant</string>
+			<string>meta.embedded.line.java-props</string>
 		</dict>
 		<key>singlequotedString</key>
 		<dict>
