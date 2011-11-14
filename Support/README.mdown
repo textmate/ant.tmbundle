@@ -1,0 +1,126 @@
+TextMate Ant Bundle
+===================
+
+Provides TextMate support for [Apache Ant][apache_ant], the most recent version of Ant can be [downloaded here][ant_download]. Alternatively Ant can be found on the Apple Developer Tools Install Disk, but this version may be out of date.
+
+Installation
+------------
+
+Via download:
+
+ * Open this [link][ant_bundle_zip]  
+ * Unzip the download  
+ * Rename the folder to Ant.tmbundle  
+ * Double-click  
+ * TextMate handles the rest!  
+
+To install via Git:
+
+		cd ~/"Library/Application Support/TextMate/Bundles/"
+		git clone git://github.com/textmate/ant.tmbundle.git "Ant.tmbundle"
+		osascript -e 'tell app "TextMate" to reload bundles'
+
+Optionally set the TM_ANT variable to point to your installation of Ant (ie /usr/local/bin/ant) in TextMate, preferences, advanced tab, shell variables.
+
+Usage
+-----
+
+As Ant files are XML TextMate won't automatically distinguish them, to achieve this you can suffix your files with `ant.xml` or include `<!--ant-->` on the first line.  
+
+Adding extra scopes to commands (Build and Build Target for example) Scope Selector field will allow access to them from files other than ant.xml.
+
+### Autocomplete Tag (⌥⎋)
+
+Takes the current word or selection and presents a matching list of known Ant tags. The full list was created using the documentation in version 1.7.0 of Ant.
+
+### Build ( ⌘B)
+Uses `TM_ANT_BUILD_FILE` if set, otherwise attempts to locate a build file and execute it. 
+
+### Build Target ( ⌥⌘B)
+Uses `TM_ANT_BUILD_FILE` if set, otherwise parses the current document for build targets from which you can select which one to execute.
+
+### Run ( ⌘R)
+Executes the current document.
+
+### Validate Build File (⌃⇧V)
+Validates the current document as valid XML. When the `TM_ANT_DTD_FILE` [environmental variable][tm_env_vars] has been set the document is also validated against the requested `ant.dtd`.
+
+### Configuration Options
+
+These environment variables allow you to define or customise the behaviour of certain commands. For help on setting them up please see [TextMate help][tm_env_vars]. 
+
+* `TM_ANT` (default: `ant`)
+The path to your ant executable.
+
+* `TM_ANT_BUILD_FILE`
+The location of the ant build file you wish to target by default. This can be either the full path, or relative to the current project.
+
+* `TM_ANT_BUILD_PARSER`
+This is Experimental - The location of a script to format the output of ant. Scripts are available to prettify the output for Java and Flex - in their respective bundles. If this variable is not set the output is wrapped in `pre` tags.
+
+* `TM_ANT_DTD_FILE`
+The location of a custom `ant.dtd` against which, in addition to verifying that the XML is well-formed, the _Validate Build File_ command can check the document conforms. It is possible to generate an `ant.dtd` by running a `<target>` with the following contents: `<antstructure output="ant.dtd" />`.
+
+* `TM_ANT_MANUAL_PATH`
+If you have installed your own version of Ant, you can set this variable to the location of its manual. For example if you installed it via MacPorts then set it to `/opt/local/share/java/apache-ant/docs/manual`. The default is to use the manual included with Apple’s developer tools with the [online version](http://ant.apache.org/manual/index.html) as a fallback.
+
+Support
+-------
+
+ * [Issue tracker][issue_tracker]
+ * [Repository][repo]
+
+For general questions please use the [TextMate Users mailing list][tm_mailing_list].
+Bugs and issues should be reported via the [issue tracker][issue_tracker].
+Source can be viewed and forked via the [GitHub repository][repo].
+
+Conventions
+-----------
+
+The bundle uses the suggestions made by the [Ant style guide][ant_style_guide].  
+Bundle authorship uses the [TextMate conventions][tm_conventions]. 
+
+Maintainer
+----------
+
+[Simon Gregory][sg_blog]
+
+License
+-------
+
+If not otherwise specified (see below), files in this project fall under the following license:
+
+		Copyright 2009-2010 Simon Gregory
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in
+		all copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+		THE SOFTWARE.
+
+An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of txt, html, or similar.
+
+[ant_bundle_zip]: http://github.com/textmate/ant.tmbundle/zipball/master
+[ant_download]: http://ant.apache.org/bindownload.cgi
+[ant_style_guide]: http://wiki.apache.org/ant/TheElementsOfAntStyle
+[ant_wiki]: http://wiki.apache.org/ant/FrontPage
+[apache_ant]: http://ant.apache.org/
+[issue_tracker]: http://github.com/textmate/ant.tmbundle/issues
+[repo]: http://github.com/textmate/ant.tmbundle/
+[sg_blog]: http://blog.simonregory.com
+[tm_conventions]: http://svn.textmate.org/trunk/Conventions.txt
+[tm_mailing_list]: http://lists.macromates.com/listinfo/textmate
+[tm_env_vars]: http://manual.macromates.com/en/environment_variables
+

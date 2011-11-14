@@ -5,21 +5,32 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
 html_header "Apache Ant Bundle Help" "Ant"
 
-"$TM_SUPPORT_PATH/lib/markdown_to_help.rb" &lt; "$TM_BUNDLE_PATH/README.mdown"
+"$TM_SUPPORT_PATH/lib/markdown_to_help.rb" &lt; "$TM_BUNDLE_SUPPORT/README.mdown"
 
 html_footer</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Help</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>text.xml.ant</string>
 	<key>uuid</key>
 	<string>B34D55F6-17C3-4698-973F-FDE059BEB675</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
