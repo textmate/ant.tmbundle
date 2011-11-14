@@ -19,11 +19,7 @@ require 'rexml/document'
 
 STDOUT.sync = true
 
-tm_ant = 'ant' 
 tm_ant = (ENV['TM_ANT'] == nil) ? 'ant' : ENV['TM_ANT']
-
-TextMate.require_cmd "#{tm_ant}"
-TextMate.min_support 10895
 
 puts html_head( :window_title =&gt; "Ant Build (target)", :page_title =&gt; "Build (target)" );
 
@@ -76,7 +72,7 @@ selected_desc = res['description']
 
 puts "&lt;h1&gt;#{selected_target}:&lt;/h1&gt;&lt;p&gt;#{selected_desc}&lt;/p&gt;&lt;pre&gt;"
 
-TextMate::Process.run("ant -buildfile #{ant_build_file} #{selected_target}", :interactive_input =&gt; false) do |str|
+TextMate::Process.run("#{tm_ant} -buildfile #{ant_build_file} #{selected_target}", :interactive_input =&gt; false) do |str|
 	STDOUT &lt;&lt; htmlize(str, :no_newline_after_br =&gt; true)
 end
 
@@ -88,15 +84,37 @@ html_footer
 	<string>document</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>~@b</string>
 	<key>name</key>
 	<string>Build Target</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>ant</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/ant</string>
+				<string>/usr/local/bin/ant</string>
+			</array>
+			<key>variable</key>
+			<string>TM_ANT</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>text.xml.ant</string>
 	<key>uuid</key>
 	<string>05BC9A24-B64E-42D6-8177-326518E65EE0</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

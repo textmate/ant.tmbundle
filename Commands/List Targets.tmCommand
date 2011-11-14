@@ -5,22 +5,45 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>require_cmd "${TM_ANT:=ant}" "Ant was not found, please ensure that it has been installed and your \$PATH is set correctly."
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
 
 if [ "$TM_FILEPATH" == "" ]; then
 	exit_show_tool_tip "Please open an ant file to scan for ant targets.";
 fi
 
-"$TM_ANT" -p -f "$TM_FILEPATH"</string>
+"${TM_ANT:-ant}" -p -f "$TM_FILEPATH"</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>List Targets</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>ant</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/ant</string>
+				<string>/usr/local/bin/ant</string>
+			</array>
+			<key>variable</key>
+			<string>TM_ANT</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>text.xml.ant</string>
 	<key>uuid</key>
 	<string>9BF3D042-E77C-4E89-9E8C-18A81AE3923B</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
