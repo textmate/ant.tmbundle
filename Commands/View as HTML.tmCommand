@@ -20,7 +20,7 @@ tmp_build_xml.close()
 
 `cp "$TM_BUNDLE_SUPPORT/style/ant2html.css" "/tmp/ant2html.css"`
 
-puts "&lt;meta http-equiv=\"refresh\" content=\"0; tm-file://#{tmp_build_uri}\"&gt;"
+puts "&lt;meta http-equiv=\"refresh\" content=\"0; file://#{tmp_build_uri}\"&gt;"
 </string>
 	<key>input</key>
 	<string>document</string>

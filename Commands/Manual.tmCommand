@@ -12,7 +12,7 @@ fi
 
 if [[ -f "$TM_ANT_MANUAL_PATH/index.html" ]]; then
 
-	echo "&lt;meta http-equiv=\"refresh\" content=\"0; tm-file://$TM_ANT_MANUAL_PATH/index.html\"&gt;"
+	echo "&lt;meta http-equiv=\"refresh\" content=\"0; file://$TM_ANT_MANUAL_PATH/index.html\"&gt;"
 
 else	
 

@@ -16,7 +16,7 @@ ANT_HELP_DICT = ENV['TM_BUNDLE_SUPPORT'] + '/data/ant_doc_dictionary.xml'
 
 ant_manual_path = "/Developer/Java/Ant/docs/manual" if !ENV['TM_ANT_MANUAL_PATH']
 ant_manual_uri = "http://ant.apache.org/manual"
-ant_manual_uri = "tm-file://" + ant_manual_path if File.directory? ant_manual_path
+ant_manual_uri = "file://" + ant_manual_path if File.directory? ant_manual_path
 ant_manual_uri = ant_manual_uri.gsub( /\/$/, '' )
 
 WORD = STDIN.read.strip
