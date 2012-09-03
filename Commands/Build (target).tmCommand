@@ -89,7 +89,7 @@ html_footer
 	<key>keyEquivalent</key>
 	<string>~@b</string>
 	<key>name</key>
-	<string>Build Target</string>
+	<string>Build Target…</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
@@ -111,7 +111,7 @@ html_footer
 		</dict>
 	</array>
 	<key>scope</key>
-	<string>text.xml.ant</string>
+	<string>attr.project.ant</string>
 	<key>uuid</key>
 	<string>05BC9A24-B64E-42D6-8177-326518E65EE0</string>
 	<key>version</key>

@@ -63,7 +63,7 @@ fi
 		</dict>
 	</array>
 	<key>scope</key>
-	<string>text.xml.ant</string>
+	<string>attr.project.ant - (text dyn.selection)</string>
 	<key>uuid</key>
 	<string>C7888301-C304-4EF2-A15F-5681A7D6D13C</string>
 	<key>version</key>
