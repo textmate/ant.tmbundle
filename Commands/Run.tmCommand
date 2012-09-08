@@ -47,6 +47,8 @@ fi
 	</array>
 	<key>scope</key>
 	<string>text.xml.ant</string>
+	<key>semanticClass</key>
+	<string>process.run.ant</string>
 	<key>uuid</key>
 	<string>7B5E4852-8B66-461F-A32A-A820625256A5</string>
 	<key>version</key>

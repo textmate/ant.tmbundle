@@ -112,6 +112,8 @@ html_footer
 	</array>
 	<key>scope</key>
 	<string>attr.project.ant</string>
+	<key>semanticClass</key>
+	<string>process.alternate.build.target.ant</string>
 	<key>uuid</key>
 	<string>05BC9A24-B64E-42D6-8177-326518E65EE0</string>
 	<key>version</key>
