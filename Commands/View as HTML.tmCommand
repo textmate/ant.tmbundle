@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby
+	<string>#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
 
 # NOTE: We output to tmp as the document doesn't render when piped directly to "Show as HTML"
 tmp_build_uri = "/tmp/tm_ant_build.xml"
